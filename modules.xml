@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="modules" fetch="https://github.com/redmi-sm8650" sync-c="true" sync-tags="false" revision="master"/>
+    <!-- audio-kernel -->
+    <project name="vendor_qcom_opensource_audio-kernel-ar" path="vendor/qcom/opensource/audio-kernel" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/audio_kernel_vendor_board.mk" src="audio_kernel_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/audio_kernel_product_board.mk" src="audio_kernel_product_board.mk"/>
+    </project>
+
+    <!-- bt-kernel -->
+    <project name="vendor_qcom_opensource_bt-kernel" path="vendor/qcom/opensource/bt-kernel" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/bt_kernel_vendor_board.mk" src="bt_kernel_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/bt_kernel_product_board.mk" src="bt_kernel_product_board.mk"/>
+    </project>
+
+    <!-- camera-kernel -->
+    <project name="vendor_qcom_opensource_camera-kernel" path="vendor/qcom/opensource/camera-kernel" remote="modules">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/camera-kernel_product.mk" src="product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/camera-kernel_board.mk" src="board.mk"/>
+    </project>
+
+    <!-- dataipa -->
+    <project name="vendor_qcom_opensource_dataipa" path="vendor/qcom/opensource/dataipa" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/dataipa_dlkm_vendor_board.mk" src="dataipa_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/dataipa_dlkm_vendor_product.mk" src="dataipa_dlkm_vendor_product.mk"/>
+    </project>
+
+    <!-- datarmnet -->
+    <project name="vendor_qcom_opensource_datarmnet" path="vendor/qcom/opensource/datarmnet" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/datarmnet_dlkm_vendor_board.mk" src="datarmnet_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/datarmnet_dlkm_vendor_product.mk" src="datarmnet_dlkm_vendor_product.mk"/>
+
+        <!-- This is very dirty. The drivers want the headers to be in their source directories. -->
+        <!-- Either keep parity with CLO, or modify for a common include path. Not good.         -->
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/aps/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/perf_tether/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/sch/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/shs/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/wlan/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/rmnet_config.h" src="core/rmnet_config.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/rmnet_hook.h" src="core/rmnet_hook.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/rmnet_map.h" src="core/rmnet_map.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/rmnet_module.h" src="core/rmnet_module.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/rmnet_descriptor.h" src="core/rmnet_descriptor.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/rmnet_qmap.h" src="core/rmnet_qmap.h"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet-ext/offload/qmi_rmnet_i.h" src="core/qmi_rmnet_i.h"/>
+    </project>
+
+    <!-- datarmnet-ext -->
+    <project name="vendor_qcom_opensource_datarmnet-ext" path="vendor/qcom/opensource/datarmnet-ext" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/datarmnet_ext_dlkm_vendor_board.mk" src="datarmnet_ext_dlkm_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/datarmnet_ext_dlkm_vendor_product.mk" src="datarmnet_ext_dlkm_vendor_product.mk"/>
+        <linkfile dest="vendor/qcom/opensource/datarmnet/core/rmnet_mem.h" src="mem/rmnet_mem.h"/>
+    </project>
+
+    <!-- display-drivers -->
+    <project name="vendor_qcom_opensource_display-drivers" path="vendor/qcom/opensource/display-drivers" remote="modules">
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/display_driver_product.mk" src="display_driver_product.mk"/>
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/display_driver_board.mk" src="display_driver_board.mk"/>
+    </project>
+
+    <!-- graphics-kernel -->
+    <project name="vendor_qcom_opensource_graphics-kernel" path="vendor/qcom/opensource/graphics-kernel" remote="modules"/>
+
+    <!-- mm-drivers -->
+    <project name="vendor_qcom_opensource_mm-drivers" path="vendor/qcom/opensource/mm-drivers" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/mm_driver_board.mk" src="mm_driver_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/mm_driver_product.mk" src="mm_driver_product.mk"/>
+    </project>
+
+    <!-- mmrm-driver -->
+    <project name="vendor_qcom_opensource_mmrm-driver" path="vendor/qcom/opensource/mmrm-driver" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/mmrm_kernel_board.mk" src="mmrm_kernel_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/mmrm_kernel_product.mk" src="mmrm_kernel_product.mk"/>
+    </project>
+
+    <!-- mmrm-driver-test -->
+    <project name="vendor_qcom_opensource_mmrm-driver-test" path="vendor/qcom/opensource/mmrm-driver/test" remote="modules"/>
+
+    <!-- eva-kernel -->
+    <project name="vendor_qcom_opensource_eva-kernel" path="vendor/qcom/opensource/eva-kernel" remote="modules" >
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/eva_kernel_board.mk" src="eva_kernel_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/eva_kernel_product.mk" src="eva_kernel_product.mk"/>
+    </project>
+
+    <!-- securemsm-kernel -->
+    <project name="vendor_qcom_opensource_securemsm-kernel" path="vendor/qcom/opensource/securemsm-kernel" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/mm_driver_board.mk" src="securemsm_kernel_vendor_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/securemsm_kernel_product_board.mk" src="securemsm_kernel_product_board.mk"/>
+    </project>
+
+    <!-- synx-kernel -->
+    <project name="vendor_qcom_opensource_synx-kernel" path="vendor/qcom/opensource/synx-kernel" remote="modules" />
+
+    <!-- touch-drivers -->
+    <project name="vendor_qcom_opensource_touch-drivers" path="vendor/qcom/opensource/touch-drivers" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/touch_driver_board.mk" src="touch_driver_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/touch_driver_product.mk" src="touch_driver_product.mk"/>
+    </project>
+
+    <!-- video-kernel -->
+    <project name="vendor_qcom_opensource_video-driver" path="vendor/qcom/opensource/video-driver" remote="modules">
+        <linkfile dest="vendor/qcom/defs/board-defs/vendor/video_kernel_board.mk" src="video_kernel_board.mk"/>
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/video_kernel_product.mk" src="video_kernel_product.mk"/>
+    </project>
+
+    <!-- wlan -->
+    <project name="vendor_qcom_opensource_wlan_fw-api" path="vendor/qcom/opensource/wlan/fw-api" remote="modules"/>
+    <project name="vendor_qcom_opensource_wlan_platform" path="vendor/qcom/opensource/wlan/platform" remote="modules"/>
+    <project name="vendor_qcom_opensource_wlan_qca-wifi-host-cmn" path="vendor/qcom/opensource/wlan/qca-wifi-host-cmn" remote="modules"/>
+    <project name="vendor_qcom_opensource_wlan_qcacld-3.0" path="vendor/qcom/opensource/wlan/qcacld-3.0" remote="modules"/>
+</manifest>
